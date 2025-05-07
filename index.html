@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday's Viet</title>
+  <link rel="icon" href="https://emojigraph.org/media/google/birthday-cake_1f382.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url("https://img.freepik.com/premium-photo/birthday-background-with-balloons-cake-gifts_979520-53904.jpg?semt=ais_hybrid&w=740");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    h1 {
+      text-align: center;
+      color: black;
+      margin-top: 20px;
+    }
+
+    .tab {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #FFD357;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .tab button {
+      background-color: #FFD357;
+      border: 1px solid #FFD357;
+      outline: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 15px;
+      margin: 0 5px;
+    }
+
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    .tab button.active {
+      color: red;
+    }
+
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .broimg {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .broimg img {
+      max-width: 100%;
+      width: 300px;
+      border-radius: 10px;
+      border: 4px solid white;
+    }
+
+    img.responsive {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      border: 10px solid white;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .tab button {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+
+      .tabcontent {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday to Viet!</h1>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Tab1')">Teacher's wishes</button>
+    <button class="tablinks" onclick="openTab(event, 'Tab2')">Nguyen Bao Nam's wishes</button>
+    <button class="tablinks" onclick="openTab(event, 'Tab3')">Bui Viet Nam's wishes</button>
+  </div>
+
+  <div id="Tab1" class="tabcontent">
+    <h2>Your Teacher</h2>
+    <img class="responsive" loading="lazy" width="400" src="https://pbs.twimg.com/media/GqLqR0dWoAAFhAe?format=jpg&name=medium">
+    <p>Happy birthday to you, Viet! May your special day bring you joy, laughter, and inspiration to keep exploring your passions.</p>
+    <p>I wish you a world of opportunities and the courage to chase your dreams. Have a fantastic day!</p>
+    <p>May your birthday be filled with wonderful memories, amazing accomplishments, and the drive to continue learning and growing.</p>
+    <p>Lots of love, your English Teacher ❤️</p>
+  </div>
+
+  <div id="Tab2" class="tabcontent">
+    <h2>Your Brother</h2>
+    <p>Happy birthday Viet! Have an amazing day. I wish you lots of money, luck, and happiness. With good friends by your side, life will always be joyful.</p>
+    <p>Now, take a look at some fun childhood memories!</p>
+    <div class="broimg">
+      <img loading="lazy" src="https://pbs.twimg.com/media/GqLpuCIXgAAPnbH?format=jpg&name=large">
+      <img loading="lazy" src="https://pbs.twimg.com/media/GqLqR0fXsAE2ihj?format=jpg&name=large">
+      <img loading="lazy" src="https://pbs.twimg.com/media/GqLpuCPXQAAbrpJ?format=jpg&name=large">
+    </div>
+    <p>Have a nice day!</p>
+  </div>
+
+  <div id="Tab3" class="tabcontent">
+    <h2>Sigma Boy</h2>
+    <p>Happy birthday Viet! Wishing you a fantastic year filled with wealth, luck, and great friendships. Birthdays are the perfect time to reflect and smile!</p>
+    <p>Here are some awesome childhood moments for you to enjoy:</p>
+    <div class="broimg">
+      <img loading="lazy" src="https://pbs.twimg.com/media/GqMX1VRWcAACgiM?format=png&name=360x360">
+      <img loading="lazy" src="https://pbs.twimg.com/media/GqMX1aAXQAAGlcW?format=png&name=small">
+      <img loading="lazy" src="https://pbs.twimg.com/media/GqMX1VeXYAAcK7C?format=png&name=small">
+      <img loading="lazy" src="https://pbs.twimg.com/media/GqMX1ZlW0AAjdbS?format=png&name=900x900">
+    </div>
+    <p>Enjoy your day!</p>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      const tabcontent = document.getElementsByClassName("tabcontent");
+      const tablinks = document.getElementsByClassName("tablinks");
+
+      for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelector(".tablinks").click(); // Open the first tab by default
+    });
+  </script>
+</body>
+</html>
